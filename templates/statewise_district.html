@@ -1,0 +1,14 @@
+{% extends 'common.html' %}
+{% block content %}
+    {% if sname %}
+        <h1 align="center">State - {{ sname }}</h1>
+    {% endif %}
+    <table align="center" border="1">
+        <tr>
+            <th style="font-size: 30px">District name</th>
+        </tr>
+    {% for x in dist_name %}
+        <tr><th><a href="{% url 'district_name' %}?d_name={{ x }}">{{ x }}</a> </th></tr>
+    {% endfor %}
+    </table>
+{% endblock %}

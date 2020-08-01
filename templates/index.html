@@ -1,0 +1,11 @@
+{% extends 'common.html' %}
+{% block content %}
+    <table align="center" border="1" width="500px" style="text-align: center">
+        <tr>
+            <th style="font-size: 40px;color: blue">States In India</th>
+        </tr>
+    {% for state in states_name %}
+        <tr><th><a href="{% url 'state_name' %}?s_name={{ state }}">{{ state }}</a> </th></tr>
+    {% endfor %}
+    </table>
+{% endblock %}

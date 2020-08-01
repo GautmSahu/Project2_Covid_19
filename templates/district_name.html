@@ -1,0 +1,22 @@
+{% extends 'common.html' %}
+{% block content %}
+    <h1 align="center">
+    {% if s_name %}
+        {{ s_name }}
+    {% endif %}
+    {% if d_name %}
+        --> {{ d_name }}
+    {% endif %}
+    </h1>
+    <table align="center" border="2">
+    <tr><th colspan="2">Cases In {{ d_name }}</th></tr>
+        {% for x,y in details.items %}
+            <tr>
+            {% if x != "notes" and x != "delta" %}
+                <th>{{ x }}</th>
+                <th>{{ y }}</th>
+            {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
